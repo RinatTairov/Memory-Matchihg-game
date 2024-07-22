@@ -142,7 +142,7 @@
                 imageNames.forEach(name => {
                     extensions.forEach(ext => {
                         const img = new Image();
-                        img.src = `img/${name}.${ext}`;
+                        img.src = `${name}.${ext}`;
                         img.onload = () => {
                             cards.push(`${name}.${ext}`);
                             loadedCount++;
@@ -152,7 +152,7 @@
                             }
                         };
                         img.onerror = () => {
-                            console.error(`Image not found: img/${name}.${ext}`);
+                            console.error(`Image not found: ${name}.${ext}`);
                             loadedCount++;
                             if (loadedCount === imageNames.length * extensions.length) {
                                 createBoard();
@@ -179,7 +179,7 @@
                     card.dataset.image = image;
 
                     const img = document.createElement('img');
-                    img.src = `img/${image}`;
+                    img.src = `${image}`;
 
                     card.appendChild(img);
                     board.appendChild(card);
